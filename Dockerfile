@@ -6,4 +6,4 @@ RUN echo 'disableAuthorization yes' > /etc/snmp/snmptrapd.conf
 
 EXPOSE 162
 
-CMD ["snmptrapd”,”-L”, “o”,”-f”]
+CMD ["snmptrapd","-L","o","-f"]
