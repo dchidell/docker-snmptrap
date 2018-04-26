@@ -8,4 +8,4 @@ EXPOSE 162
 
 VOLUME ["/mibs"]
 
-CMD ["snmptrapd","-L","o","-f","-M","/mibs"]
+CMD ["snmptrapd","-L","o","-f","-M","/mibs","-m","ALL"]
