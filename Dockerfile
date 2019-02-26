@@ -1,11 +1,8 @@
-FROM alpine:latest
+FROM alpine:3.8
 MAINTAINER David Chidell (dchidell@cisco.com)
 
 RUN apk --no-cache add net-snmp
-RUN echo 'disableAuthorization yes' > /etc/snmp/snmptrapd.conf
-
+ADD mibs.tar.gz /mibs/
+ADD snmptrapd.conf /etc/snmp/snmptrapd.conf
 EXPOSE 162
-
-VOLUME ["/mibs"]
-
 CMD ["snmptrapd","-L","o","-f","-M","/mibs","-m","ALL"]
